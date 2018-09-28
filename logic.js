@@ -18,12 +18,22 @@ function renderButtons() {
 		$(".button").append(a);
 	}
 }
-$("#add-singer").on("click", function (event) {
-	event.preventDefault();
-	var artist = $("#singer-input").val().trim();
-	topics.push(artist);
-	renderButtons();
 
+
+
+$("#add-artist").on("click", function (event) {
+    event.preventDefault();
+    $("#message").empty();
+	var artist = $("#artist-input").val().trim();
+    
+    if (topics.indexOf(artist)=== -1){
+
+        topics.push(artist); 
+        renderButtons();   
+    }else{
+        $("#message").append("<h5>" + artist + " button already exists</h5>")
+    };
+    
     $(".artist").on("click", giffyCreator);
 
 });
