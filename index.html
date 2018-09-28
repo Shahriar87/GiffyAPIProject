@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>GiffTastic Tribute to the Musicians & Singers who passed away</title>
+    
+</head>
+<body>
+    <h1>GiffTastic Tribute to the Musicians & Singers who passed away</h1>
+    <div class="button">
+        <button class="artist" id="Chuck Schuldiner" >Chuck Schuldiner</button>
+        <button class="artist" id="Dimebag Darrel" >Dimebag Darrel</button>
+        <button class="artist" id="Cliff Burton" >Cliff Burton</button>
+        <button class="artist" id="Chris Cornell" >Chris Cornell</button>
+        <button class="artist" id="Chester Bennington" >Chester Bennington</button>
+    </div>
+    <div class="container">
+        <h3>Add your Favorite Musicians/Singers who passed away</h3>
+        <!-- Rendered Buttons will get Dumped Here -->
+        <div id="button-view"></div>
+        <form id="Singer-form">
+            <label for="singer-input"></label>
+            <input type="text" id="singer-input"><br>
+            <!-- Button triggers new singer to be added -->
+            <button id ="add-singer" type="submit" value="submit">Add Button</button>
+        </form>
+    </div>
+    <div id="gifs-appear-here"></div>
+    <!-- <script src="ajax.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script src="logic.js"></script>
+
+
+        
+</body>
+</html>
