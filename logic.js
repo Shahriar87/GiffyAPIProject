@@ -27,15 +27,18 @@ $("#add-artist").on("click", function (event) {
     $("#message").empty();
     var artist = $("#artist-input").val().trim();
 
-    if (topics.indexOf(artist) === -1) {
+    if (artist != ""){
 
-        topics.push(artist);
-        renderButtons();
-    } else {
-        $("#message").append("<h5>" + artist + " button already exists</h5>")
-    };
+        if (topics.indexOf(artist) === -1) {
 
-    $(".artist").on("click", giffyCreator);
+            topics.push(artist);
+            renderButtons();
+        } else {
+            $("#message").append("<h5>" + artist + " button already exists</h5>")
+        };
+
+        $(".artist").on("click", giffyCreator);
+    }
 
 });
 
