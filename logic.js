@@ -1,21 +1,22 @@
 var topics = ["Chuck Schuldiner", "Dimebag Darrel", "Cliff Burton", "Chris Cornell", "Chester Bennington"];
 
+var personImage = "";
+
+
 $(".artist").on("click", giffyCreator);
 
 
 function renderButtons() {
-	$("#button-view").empty();
-	$(".button").empty();
+	$(".btn-toolbar").empty();
 
 	for (var i = 0; i < topics.length; i++) {
 		var a = $("<button>");
-		a.addClass("artist");
-
+		a.addClass("artist btn btn-secondary");
 		a.attr("id", topics[i]);
 
 		a.text(topics[i]);
 
-		$(".button").append(a);
+		$(".btn-toolbar").append(a);
 	}
 }
 
@@ -49,26 +50,50 @@ function giffyCreator() {
 
         console.log(person);
 
+
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
         console.log(queryURL);
-        console.log(response);
+        // console.log(response);
         var results = response.data;
         for (var i = 0; i < 10; i++) {
 
-            var personDiv = $("<span>");
+            var personDiv = $("<span style='float: left'>");
 
-            var p = $("<p>").text("Rating: " + results[i].rating);
+            var rating = $("<h6>").text("Rating: " + results[i].rating);
 
-            var personImage = $("<img>");
-            personImage.attr("src", results[i].images.fixed_height.url);
+            personImage = $("<img>");
+            personImage.addClass("images")
+            personImage.attr("src", results[i].images.fixed_height_still.url);
+            personImage.attr("data-animate", results[i].images.fixed_height.url);
+            personImage.attr("data-still", results[i].images.fixed_height_still.url);
+            personImage.attr("data-state", 'still');
 
-            personDiv.append(p);
+            personDiv.append(rating);
             personDiv.append(personImage);
 
-            $("#gifs-appear-here").prepend(personDiv);
+            // $("#gifs-appear-here").append(rating);
+            // $("#gifs-appear-here").append(personImage);
+            $("#gifs-appear-here").append(personDiv);
+
         }
+
+        $(".images").on("click", function() {
+
+            var state = $(this).attr("data-state");
+            console.log(state);
+            if (state === "still") {
+                $(this).attr("src", $(this).attr("data-animate"));
+                $(this).attr("data-state", "animate");
+            } else {
+                $(this).attr("src", $(this).attr("data-still"));
+                $(this).attr("data-state", "still");
+            }           
+        });
     });
 };
+
+
+

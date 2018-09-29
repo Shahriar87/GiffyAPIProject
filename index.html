@@ -1,39 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
     <title>GiffTastic Tribute to the Musicians & Singers who passed away</title>
-    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
-<body>
-    <h1>GiffTastic Tribute to the Musicians & Singers who passed away</h1>
-    <div class="button">
-        <button class="artist" id="Chuck Schuldiner" >Chuck Schuldiner</button>
-        <button class="artist" id="Dimebag Darrel" >Dimebag Darrel</button>
-        <button class="artist" id="Cliff Burton" >Cliff Burton</button>
-        <button class="artist" id="Chris Cornell" >Chris Cornell</button>
-        <button class="artist" id="Chester Bennington" >Chester Bennington</button>
-    </div>
+<body class="bg-info">
     <div class="container">
-        <h3>Add your Favorite Musicians/Singers who passed away</h3>
-        <!-- Rendered Buttons will get Dumped Here -->
-        <div id="button-view"></div>
-        <form id="Singer-form">
-            <label for="artist-input"></label>
-            <input type="text" id="artist-input"><br>
-            <!-- Button triggers new singer to be added -->
-            <button id ="add-artist" type="submit" value="submit">Add Button</button>
-        </form>
-        <div id="message"></div>
+        <h1>GiffTastic Tribute to the Musicians & Singers who passed away</h1>
+        <div class="btn-toolbar">
+            <button type="button" class="artist btn btn-secondary" id="Chuck Schuldiner" >Chuck Schuldiner</button>
+            <button type="button" class="artist btn btn-secondary" id="Dimebag Darrel" >Dimebag Darrel</button>
+            <button type="button" class="artist btn btn-secondary" id="Cliff Burton" >Cliff Burton</button>
+            <button type="button" class="artist btn btn-secondary" id="Chris Cornell" >Chris Cornell</button>
+            <button type="button" class="artist btn btn-secondary" id="Chester Bennington" >Chester Bennington</button>
+        </div>
+        <div>
+            <h3>Add your Favorite Musicians/Singers who passed away</h3>
+            <form id="Singer-form">
+                <label for="artist-input"></label>
+                <input type="text" id="artist-input">
+                <br>
+                <br>
+                
+                <button id ="add-artist" type="button" class="btn btn-secondary" value="submit">Add Button</button>
+            </form>
+            <div id="message"></div>
+        </div>
+        <div id="gifs-appear-here"></div>
+
     </div>
-    <div id="gifs-appear-here"></div>
-    <!-- <script src="ajax.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
-    <script src="logic.js"></script>
+       
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="logic.js"></script>
 
-        
 </body>
+
 </html>
